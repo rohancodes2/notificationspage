@@ -1,0 +1,150 @@
+@import url('./assets/fonts/PlusJakartaSans-VariableFont_wght.ttf');
+*{
+    box-sizing: border-box;
+
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color:hsl(210, 60%, 98%);
+    font-size: 14px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 500;
+}
+
+.card-outline {
+    
+ /* width:700px; */
+    border-radius: 5px;
+    background-color: white;
+    padding: 10px;
+    /* height: fit-content; */
+}
+
+.card-head{
+
+display: flex;
+justify-content: space-between;
+margin: 10px;
+}
+.card-head-notif{
+    font-size: 18px;
+}
+.messages{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.message {
+    display: flex;
+    background-color:hsl(0, 0%, 100%);
+    margin: 1em;
+    width: 95%;
+    border-radius: 5px;
+    padding: 10px;
+    
+
+}
+.message.active{
+    
+    background-color: hsl(210, 60%, 98%);
+}
+.message-text {
+    margin:0px 2px 2px 0px;
+    margin-left: 10px;
+    margin-bottom: 2px;
+}
+.message-highlight{
+    color: hsl(219, 12%, 42%);
+    font-weight: bold;
+    
+}
+.message-highlight:hover, .message-club:hover{
+    color: hsl(219, 85%, 26%);
+    font-weight: bold;
+    cursor: pointer;
+    
+}
+#allmarker{
+    color: hsl(219, 12%, 42%)
+}
+#allmarker:hover {
+    color: hsl(219, 85%, 26%);
+    cursor: pointer;
+}
+.message-time{
+color: hsl(219, 14%, 63%);
+}
+.message-club{
+    color: hsl(219, 12%, 42%);;
+    font-weight: bold;
+}
+
+.message-detail{
+    border: solid 1px hsl(211, 68%, 94%);
+    padding: 1rem;
+    /* width: 545px; */
+    border-radius: 5px;
+    margin: 5px;
+    
+}
+.message-detail:hover{
+    background-color: hsl(205, 33%, 90%);
+    cursor: pointer;
+}
+.active-marker{
+    border-radius: 50%;
+    background-color: hsl(1, 90%, 64%);
+    height: 7px;
+    width: 7px;
+    margin-left: 5px;
+    display: inline-block;
+}
+img {
+    height: 40px;
+
+}
+.message-image:hover{
+    border:solid 3px hsl(211, 68%, 94%);
+    border-radius: 5px;;
+
+}
+.user:hover{
+    color: hsl(219, 85%, 26%);
+    font-weight: bold;
+    cursor: pointer;
+}
+@media only screen and (max-width: 400px) {
+    body {
+      height: 134vh;
+    }
+  }
+ 
+  @media only screen and (max-width: 369px) {
+    body {
+      height: 150vh;
+    }
+  }
+
+@media only screen and (min-width: 1100px) {
+    .card-outline {
+    
+           width:700px; 
+           border-radius: 5px;
+           background-color: white;
+           padding: 10px;
+          height: fit-content; 
+       }
+       .message-detail{
+       
+       width: 545px; 
+      
+    }
+  }
+ 

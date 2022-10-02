@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Notifications page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card-outline">
+    <div class="card-head">
+      <span class="card-head-notif"><strong>Notifications</strong> <span id="active-notif"
+          style="background-color: hsl(219, 85%, 26%);color: white;padding:0px 7px 0px 7px; border-radius: 3.5px;">3</span></span>
+
+      <span id="allmarker" >Mark all as read</span>
+    </div>
+
+    <div class="messages">
+      <div class="message active">
+        <img src="./assets/images/avatar-mark-webber.webp"><span class="message-text"><strong class="user">Mark Webber</strong>
+          reacted to your recent post <span class="message-highlight">My first tournament today!</span><span
+            class="active-marker"></span>
+          <div class="message-time">1m ago</div>
+        </span>
+      </div>
+      <div class="message active">
+        <img src="./assets/images/avatar-angela-gray.webp"><span class="message-text"><strong class="user">Angela Gray</strong>
+          followed you<span class="active-marker"></span>
+          <div class="message-time">5m ago</div>
+        </span>
+      </div>
+      <div class="message active">
+        <img src="./assets/images/avatar-jacob-thompson.webp"><span class="message-text"><strong class="user">Jacob Thompson</strong>
+          has joined your group <span class="message-club">Chess Club</span><span class="active-marker"></span>
+          <div class="message-time">1 day ago</div>
+        </span>
+      </div>
+      <div class="message">
+        <img src="./assets/images/avatar-rizky-hasanuddin.webp"><span class="message-text"><strong class="user"> Rizky Hasanuddin
+          </strong>sent you a private message
+          <div class="message-time">5 days ago</div>
+          <div class="message-detail"> Hello, thanks for setting up the Chess Club. I've been a member for a few weeks
+            now and
+            I'm already having lots of fun and improving my game.</div>
+        </span>
+      </div>
+      <div class="message">
+        <img src="./assets/images/avatar-kimberly-smith.webp"><span class="message-text" style="width: 100%;"><strong class="user">
+            Kimberly Smith </strong>commented on your picture
+          <img class="message-image"style="float: right;" src="./assets/images/image-chess.webp">
+          <div class="message-time">1 week ago</div>
+        </span>
+      </div>
+      <div class="message"><img src="./assets/images/avatar-nathan-peterson.webp"><span
+          class="message-text"><strong class="user">Nathan Peterson</strong> reacted to your recent post <span
+            class="message-highlight">5 end-game strategies to increase your
+            win rate</span>
+          <div class="message-time">2 weeks ago</div>
+        </span>
+
+      </div>
+      <div class="message"><img src="./assets/images/avatar-anna-kim.webp"><span class="message-text"><strong class="user"> Anna
+            Kim</strong> left the group <span class="message-club">Chess Club</span>
+          <div class="message-time">2 weeks ago</div>
+        </span>
+      </div>
+    </div>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend
+        Mentor</a>.
+      Coded by <a href="#">Rohan Ginde</a>.
+    </div>
+  </div>
+  <script>
+
+    const activeNotifications = document.getElementById('active-notif')
+    const activeMessages = Array.from(document.querySelectorAll(".message.active"))
+    document.getElementById('allmarker').addEventListener('click', () => {
+      activeNotifications.textContent = 0
+      activeMessages.forEach(i => {
+        i.classList.remove("active")
+        i.childNodes[2].querySelector(".active-marker").style.display = "none"
+        
+      })
+
+    });
+    activeMessages.forEach((i) => {
+      i.addEventListener('click', () => {
+        i.classList.remove("active")
+        i.childNodes[2].querySelector(".active-marker").style.display = "none"
+        activeNotifications.textContent = Number(activeNotifications.textContent) - 1
+        
+      },{once : true})
+    })
+
+  </script>
+</body>
+
+</html>
