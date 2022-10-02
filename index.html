@@ -106,8 +106,8 @@
       i.addEventListener('click', () => {
         i.classList.remove("active")
         i.childNodes[2].querySelector(".active-marker").style.display = "none"
-        activeNotifications.textContent = Number(activeNotifications.textContent) - 1
-        
+        if(activeNotifications.textContent!=0){ activeNotifications.textContent =  Number(activeNotifications.textContent) - 1
+        }
       },{once : true})
     })
 
